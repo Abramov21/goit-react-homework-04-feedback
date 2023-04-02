@@ -4,17 +4,20 @@ import PropTypes from 'prop-types';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ul className={s.controls}>
-      {options.map(option => (
-        <li key={option} className={s.controls__item}>
-          <button
-            className={s.controls__btn}
-            type="button"
-            onClick={() => onLeaveFeedback(option)}
-          >
-            {option}
-          </button>
-        </li>
-      ))}
+      {options.map(option => {
+        console.log(option);
+        return (
+          <li key={option} className={s.controls__item}>
+            <button
+              className={s.controls__btn}
+              type="button"
+              onClick={() => onLeaveFeedback(option)}
+            >
+              {option}
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 };
